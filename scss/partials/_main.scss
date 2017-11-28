@@ -1,11 +1,91 @@
-.step {
-  border: 1px solid black;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body, html {
+  height: 100%;
+}
+
+html {
+  font-size: 10px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background: blue;
+}
+
+.hidden {
+  display: none;
+}
+
+header {
+  background: darken(blue, 10%);
   padding: 10px;
-  min-width: 280px;
-  margin: 0 20px;
+  display: flex;
+  justify-content: center;
+  h1 {
+    font-weight: 300;
+    color: white;
+  }
+}
+
+main {
+  height: calc(100% - 47px);
+}
+
+.dashboard {
+  height: 100%;
+  display: flex;
+  padding-bottom: 5px;
+}
+
+.list-placeholder {
+  background: red;
+  width: 270px;
+  margin: 5px;
+}
+
+.list {
+  background: #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  .list-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+}
+
+.add-card-btn {
+  font-size: 1.4rem;
 }
 
 .card {
-  border: 1px solid red;
-  padding: 10px;
+  background: darken(#ccc, 25%);
 }
+
+
+//
+// .main-container {
+//   display: flex;
+//   flex-flow: row nowrap;
+//   align-items:flex-start;
+//   padding: 20px 10px;
+//   overflow-x: auto;
+// }
+//
+// .step {
+//   border: 1px solid black;
+//   min-width: 280px;
+//   padding: 10px;
+//   margin: 0 10px;
+// }
+//
+// .card {
+//   border: 1px solid red;
+//   padding: 10px;
+// }

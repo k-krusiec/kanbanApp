@@ -1,0 +1,27 @@
+//breakpoints
+$desktop: 'screen and (min-width: 960px)';
+$tablet: 'screen and (min-width: 601px) and (max-width: 959px)';
+$phone: 'only screen and (max-width: 600px)';
+
+
+//siteassets
+$site-width: 960px;
+$max-width: 100%;
+
+//fontsetup
+$main-font-size: 16px;
+$montserrat: 'montserrat', sans-serif;
+$light: 300;
+$regular: 400;
+$bold: 700;
+
+//colors
+$android-green: #a4c639;
+$k3-green-light: #bfd774;
+$k3-gray: #80817e;
+$k3-gray-light: #ccc;
+$k3-gray-extra-light: #f5f5f5;
+$black: #000;
+$k3-violet: #5b39c6;
+$k3-violet-light: #b3a4e5;
+$white: #fff;
