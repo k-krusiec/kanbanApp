@@ -1,5 +1,6 @@
 const DashboardModule = (function () {
   let options = {};
+  let cardId = 0;
 
   const editTitle = function (element) {
     let currentTitle = element.innerText;
@@ -26,10 +27,38 @@ const DashboardModule = (function () {
         }
   }
 
+  const removeCard = function () {
+    const $removeCardBtn = $('.remove-card');
+
+    $removeCardBtn.on('click', function (e) {
+      let thisCardId = $(this).parent().attr('data-id');
+
+      e.preventDefault();
+      $(this).parent().remove();
+    })
+
+  }
+
+  const addCard = function (element) {
+    console.log(element.parentNode);
+    const card = `
+      <div class="card" data-name="card" data-id="${cardId}">
+        <p class="card-title"> title </p>
+        <button class="remove-card">X</button>
+      </div>`;
+      // <input type="text" name="card-input">
+      // <button class="add-card-btn">Dodaj</button>
+      // <button class="abort-card-btn">X</button>
+
+    element.insertAdjacentHTML('beforebegin', card);
+    cardId++;
+    
+    removeCard();
+  }
+
+
   const prepareElements = function () {
     const elements = options.dashboard.querySelectorAll('.list, .list-header, .list-title, .list-title-input, .add-card-btn');
-
-    // console.log(elements[0].dataset.name);
 
     const forEach = function (array, callback, scope) {
       for (let i = 0; i < array.length; i++) {
@@ -40,12 +69,14 @@ const DashboardModule = (function () {
     forEach(elements, function(index, element) {
       const dataName = element.dataset.name;
 
-      // console.log(dataName);
-
       if (dataName.toUpperCase() === 'LIST-HEADER') {
         element.firstElementChild.addEventListener('click', function () {editTitle(element)});
         element.lastElementChild.addEventListener('blur', function () {blurTitle(element)});
         element.lastElementChild.addEventListener('keypress', function (e) {confirmTitle(element, e)});
+      }
+
+      if (dataName.toUpperCase() === 'ADD-CARD-BTN') {
+        element.addEventListener('click', function () {addCard(element)});
       }
 
     });
