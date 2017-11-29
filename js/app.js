@@ -27,13 +27,41 @@ const DashboardModule = (function () {
         }
   }
 
+  const hideAddCardBtn = function (element) {
+    element.classList.add('hidden');
+  }
+
+  const showAddCardBtn = function (element) {
+    element.find('.add-card-btn').removeClass('hidden');
+  }
+
+  const addNewCard = function () {
+    const $newCardBtn = $('.new-card-btn');
+
+    $newCardBtn.on('click', function (e) {
+      e.preventDefault();
+
+      const card = $(this).parent().parent();
+      let cardInput = card.find('input');
+
+      card.find('.card-title').toggleClass('hidden').text(cardInput.val());
+      card.find('.remove-card').toggleClass('hidden');
+      card.find('.card-editor').remove();
+
+      showAddCardBtn(card.parent());
+
+    })
+
+  }
+
   const removeCard = function () {
     const $removeCardBtn = $('.remove-card');
 
     $removeCardBtn.on('click', function (e) {
+      e.preventDefault();
+
       let thisCardId = $(this).parent().attr('data-id');
 
-      e.preventDefault();
       $(this).parent().remove();
     })
 
@@ -43,16 +71,20 @@ const DashboardModule = (function () {
     console.log(element.parentNode);
     const card = `
       <div class="card" data-name="card" data-id="${cardId}">
-        <p class="card-title"> title </p>
-        <button class="remove-card">X</button>
+        <p class="card-title hidden"> title </p>
+        <button class="remove-card hidden">X</button>
+        <div class="card-editor">
+          <input type="text" name="card-input">
+          <button class="new-card-btn">Dodaj</button>
+          <button class="abort-card-btn">X</button>
+        </div>
       </div>`;
-      // <input type="text" name="card-input">
-      // <button class="add-card-btn">Dodaj</button>
-      // <button class="abort-card-btn">X</button>
 
     element.insertAdjacentHTML('beforebegin', card);
     cardId++;
-    
+
+    hideAddCardBtn(element);
+    addNewCard();
     removeCard();
   }
 
