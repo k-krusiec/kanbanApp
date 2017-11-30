@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" media="screen">
+    <title>KanbanApp</title>
+  </head>
+  <body>
+    <header>
+      <h1>KanbanApp</h1>
+    </header>
+    <main>
+      <div class="dashboard">
+        <div class="list-placeholder">
+          <div class="list" data-name="list">
+            <div class="list-header" data-name="list-header">
+              <p class="list-title" data-name="list-title">To do</p>
+              <input class="list-title-input hidden" data-name="list-title-input" type="text" name="" value="">
+            </div>
+            <div class="cards"></div>
+            <button class="add-card-btn" data-name="add-card-btn" type="button" name="button"><img src="./images/plus.svg" alt="add card">Dodaj kartę</button>
+          </div>
+        </div>
+        <div class="list-placeholder">
+          <div class="list" data-name="list">
+            <div class="list-header" data-name="list-header">
+              <p class="list-title" data-name="list-title">In progress</p>
+              <input class="list-title-input hidden" data-name="list-title-input" type="text" name="" value="">
+            </div>
+            <div class="cards"></div>
+            <button class="add-card-btn" data-name="add-card-btn" type="button" name="button"><img src="./images/plus.svg" alt="add card">Dodaj kartę</button>
+          </div>
+        </div>
+        <a class="add-step-btn" data-name="add-step-btn" href="#">Add Step</a>
+      </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

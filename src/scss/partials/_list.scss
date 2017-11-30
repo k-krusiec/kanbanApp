@@ -1,0 +1,61 @@
+.list-placeholder {
+  display: inline-block;
+  height: calc(100vh - 90px);
+  margin: 5px;
+  min-width: 270px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 270px;
+}
+
+.list {
+  background: #eaeaea;
+  border-radius: 5px;
+  -webkit-box-shadow: 3px 3px 1px 0px $black-opac-01;
+  -moz-box-shadow: 3px 3px 1px 0px $black-opac-01;
+  box-shadow: 3px 3px 1px 0px $black-opac-01;
+  padding: 10px;
+
+  .list-title,
+  .list-title-input {
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    padding: 5px;
+  }
+
+  .list-title {
+    border-bottom: 1px solid darken($white, 20%);
+  }
+
+  .list-title-input {
+    border-radius: 5px;
+    width: 100%;
+  }
+}
+
+.add-card-btn {
+  background: none;
+  border: none;
+  color: $gray;
+  font-size: 1.4rem;
+  margin: 10px 5px 5px;
+  position: relative;
+
+  &:hover:after {
+    border-bottom: 1px solid $gray;
+    bottom: 0;
+    content: '';
+    cursor: pointer;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  img {
+    margin-right: 5px;
+    width: 10px;
+  }
+}

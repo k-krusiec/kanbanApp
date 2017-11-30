@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var browserSync = require('browser-sync').create(); //to dodane ostatnio
+var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 
@@ -10,9 +10,6 @@ gulp.task('sass', function() {
     .pipe(sass().on('error', sass.logError))
     .pipe(sass({
       outputStyle: 'nested'
-      //outputStyle: 'expanded'
-      //outputStyle: 'compact'
-      //outputStyle: 'compressed'
     }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('css'))

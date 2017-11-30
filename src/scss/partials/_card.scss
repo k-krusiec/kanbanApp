@@ -1,0 +1,71 @@
+.card {
+  background: darken($white, 15%);
+  border: 1px solid darken($white, 30%);
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
+  position: relative;
+
+  .card-editor {
+    display: flex;
+    flex-flow: row wrap;
+
+    input {
+      display: inline-block;
+      padding: 10px;
+      margin: 5px 0;
+      width: 100%;
+    }
+
+    .new-card-btn {
+      background: $main-blue;
+      border: none;
+      border-radius: 5px;
+      color: $white;
+      padding: 10px 20px;
+      text-transform: uppercase;
+
+      &:hover {
+        background-color: darken($main-blue, 5%);
+      }
+    }
+
+    .cancel-card-btn {
+      background: none;
+      border: none;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 5px;
+      padding: 5px 10px;
+
+      > img {
+        display: inline-block;
+        width: 16px;
+      }
+
+      &:hover {
+        background-color: darken($white, 25%);
+      }
+    }
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+    max-width: 80%;
+    word-wrap: break-word;
+  }
+
+  .remove-card {
+    background: none;
+    border: none;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+
+    img {
+      width: 16px;
+    }
+  }
+}
